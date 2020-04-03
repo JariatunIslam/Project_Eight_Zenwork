@@ -1,0 +1,463 @@
+ @import url('https://fonts.googleapis.com/css?family=Inter:400,600|Poppins:400,500i&display=swap');
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 50px;
+    width: 50px;
+    /*background-color: #353b48;*/
+    border-radius: 30px;
+    padding: 10px;
+    position: relative;
+    transition: width 0.4s linear;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f27575+0,c46671+100 */
+    background: #f27575; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f27575 0%, #c46671 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f27575 0%,#c46671 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f27575 0%,#c46671 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f27575', endColorstr='#c46671',GradientType=0 ); /* IE6-9 */
+  
+    }
+    .searchbar:hover{
+      width: 300px;
+     
+     
+    }
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    /* transition: width 0.4s linear; */
+    position: absolute;
+    right: 200px;
+    top: 0;
+    height: 100%;
+
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 100px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+    ::placeholder{
+      color: #fff;
+    }
+     .search_icon:hover{
+      color: #fff;
+      text-decoration: none;
+      transition: width 0.4s linear;
+     }
+
+   
+
+    .search_icon{
+    height: 30px;
+    width: 30px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    font-size: 20px;
+  
+
+    }
+.button_container {
+  position: relative;
+  /* top: 5%; */
+  /* right: 2%; */
+  height: 19px;
+  width: 25px;
+  cursor: pointer;
+  z-index: 100;
+  -webkit-transition: opacity .25s ease;
+  transition: opacity .25s ease;
+}
+.button_container:hover {
+  opacity: .7;
+}
+.button_container.active .top {
+  -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
+  transform: translateY(8px) translateX(0) rotate(45deg);
+  background: #FFF;
+}
+.button_container.active .middle {
+  opacity: 0;
+  background: #FFF;
+}
+.button_container.active .bottom {
+  -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
+  transform: translateY(-10px) translateX(0) rotate(-45deg);
+  background: #FFF;
+}
+.button_container span {
+  background: #fff;
+  border: none;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+  cursor: pointer;
+}
+.button_container span:nth-of-type(2) {
+  top: 9px;
+  width: 60%;
+}
+.button_container span:nth-of-type(3) {
+  top: 18px;
+}
+
+.overlay {
+  position: fixed;
+  background: #FF5252;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .35s, visibility .35s, height .35s;
+  transition: opacity .35s, visibility .35s, height .35s;
+  overflow: hidden;
+}
+.overlay.open {
+  opacity: .9;
+  visibility: visible;
+  height: 100%;
+  z-index: 2;
+}
+.overlay.open li {
+  -webkit-animation: fadeInRight .5s ease forwards;
+          animation: fadeInRight .5s ease forwards;
+  -webkit-animation-delay: .35s;
+          animation-delay: .35s;
+}
+.overlay.open li:nth-of-type(2) {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+.overlay.open li:nth-of-type(3) {
+  -webkit-animation-delay: .45s;
+          animation-delay: .45s;
+}
+.overlay.open li:nth-of-type(4) {
+  -webkit-animation-delay: .50s;
+          animation-delay: .50s;
+}
+.overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-family: 'Vollkorn', serif;
+  font-weight: 400;
+  text-align: center;
+  z-index:;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 7);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  color: #FFF;
+  text-decoration: none;
+  overflow: hidden;
+}
+.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  width: 100%;
+}
+.overlay ul li a:after {
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f27575+0,c46671+100 */
+    background: #f27575; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f27575 0%, #c46671 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f27575 0%,#c46671 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f27575 0%,#c46671 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f27575', endColorstr='#c46671',GradientType=0 ); /* IE6-9 */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 3px;
+  background: #FFF;
+  -webkit-transition: .35s;
+  transition: .35s;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+header{
+ 
+padding: 20px;
+ 
+position: relative;
+}
+.banner{
+    top: 0px;
+    position: absolute;
+    left: 0px;
+}
+.vh-500{
+min-height: 500px;  
+}
+/* font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif; */
+.banner-content{}
+.banner-content h1{
+    color: #3c3768;
+    font-size: 45px;
+    font-weight: 900;
+}
+h1{
+  font-family: 'Poppins', sans-serif;
+}
+.banner-content p{
+    font-size: 20px;
+}
+p{
+    font-size: 18px;
+    color: #455a64;
+    font-family: 'Inter', sans-serif;
+}
+.form-inline{}
+.form-inline input{
+    border: 1px solid #fff;
+    box-shadow: 0px 20px 50px 0px #fdd1d0;
+    padding: 30px 65px;
+}
+.form-inline button{
+    padding: 18px 35px;
+    box-shadow: 0px 20px 50px 0px #fdd1d0;
+    font-size: 18px;
+}
+h5{
+  font-size: 20px;
+  color: #455a64;
+    font-family: 'Inter', sans-serif;
+}
+.btn-custom{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f27575+0,c46671+100 */
+    background: #f27575; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f27575 0%, #c46671 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f27575 0%,#c46671 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f27575 0%,#c46671 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f27575', endColorstr='#c46671',GradientType=0 ); /* IE6-9 */
+
+    color: #fff;
+    transition-duration: 0.4s ;
+    }
+    .btn-custom:hover{
+      color:#f97875ad;
+      background: transparent;
+      border:1px solid #f97875ad 
+
+    }
+.form-control:focus {
+    border: 1px solid #f97875ad;
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0,123,255,.25);
+}
+
+.service-section{
+    position: relative;
+    padding: 100px 0px;
+}
+.service-section img{
+    transform: translateX(-20%);
+    position: absolute;
+    top: 50%;
+    trasform: translateY(-50%);
+    transform: translateY(-36%)!important;
+    /* transform: translateX(-13%)!important; */
+    top: 50%;
+    /* max-height: 550px; */
+}
+.service{
+    padding: 60px;
+    background: #ffffff85;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 20px 50px 0px #fdd1d0b8;
+}
+.service h2{
+    color: #3c3768;
+    font-size: 22px;
+}
+.service p{
+    color: #455a64;
+    font-size: 15px;
+}
+.service a{
+    color: #fa7875;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.service span{}
+.service span i{}
+.section1{}
+.section1 img{
+    left: 0;
+    /* max-height: 500px; */
+    max-height: 550px;
+}
+.section2{
+    /* right: 0; */
+}
+.section2 img{
+    right: 0;
+    max-height: 650px;
+}
+.section3{
+    /* left: 0; */
+    /* max-height: 100%; */
+}
+.section3 img{
+    left: 0;
+    max-height: 600px;
+}
+.subscribe-section{
+    padding: 120px 100px 100px 100px;
+}
+.subscribe-section .container{
+  background-size: cover;
+  background-image: url(../images/footeter.png);
+  background-repeat: no-repeat;
+}
+.subscribe-section .row{padding: 70px 0px 70px 0px;
+align-items: center;}
+.subscribe-section h2{
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+.subscribe-section p{
+    color: #c5cae9;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+.form-inline1 input{
+   border: 1px solid #fff;
+    padding: 30px 65px;
+}
+
+footer{
+    position: relative;
+    padding: 0px 100px;
+}
+footer > img{
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+footer a img{}
+footer p{
+    color: #455a64;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    margin: 40px 0px;
+} 
+.footer-menu{}
+.footer-menu li{}
+.footer-menu li a{
+    font-size: 16px;
+    color: #455a64;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    margin: 10px;
+}
+.footer-menu li a:hover{
+    text-decoration: none;
+    color: #fa807e;
+}
+
+
+.social-menu{}
+.social-menu li{}
+.social-menu li a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #322e57;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 10px;
+    transition-duration: 0.2s;
+}
+.social-menu li a:hover{
+    background: #fb7875;
+}
+
+.copyright{
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+@media(max-width: 991){
+  .searchbar:hover{
+    width: 100px !important
+  }
+
+}
+@media(max-width: 575px){
+.searchbar{
+  display: none
+}
+}
